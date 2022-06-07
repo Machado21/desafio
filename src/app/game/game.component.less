@@ -1,0 +1,88 @@
+@import "../shared/styles/colors.less";
+
+.game {
+  display: grid;
+  grid-template-rows: 50vh 10vh 20vh;
+  width: 100vw;
+  height: 70vh;
+
+  &__view {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    div {
+      display: flex;
+      height: 50%;
+      width: 45vw;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      h1 {
+        font-weight: 400;
+        color: @Color-03;
+      }
+      .view__life-player {
+        align-items: start;
+        height: 15px;
+        background-color: #777;
+        position: relative;
+        border-radius: 5px 5px;
+        .life__player {
+          position: absolute;
+          height: 100%;
+          width: 50%;
+          border-radius: 5px 5px;
+          background-color: #add555;
+        }
+      }
+      .view__life-monster {
+        align-items: start;
+        height: 15px;
+        background-color: #777;
+        position: relative;
+        border-radius: 5px 5px;
+        .life__monster {
+          position: absolute;
+          height: 100%;
+          width: 50%;
+          border-radius: 5px 5px;
+          background-color: #add555;
+        }
+      }
+      img {
+        height: 50%;
+      }
+    }
+  }
+
+  &__commands {
+    display: flex;
+    flex-direction: row;
+    background-color: @Color-01;
+    border: 1px solid @Color-03;
+    .game__commands-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .game__commands-list {
+        width: inherit;
+        ul {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          li {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+
+  &__logs {
+    display: grid;
+    background-color: @Color-01;
+  }
+}

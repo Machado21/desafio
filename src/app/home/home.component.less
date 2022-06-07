@@ -1,0 +1,36 @@
+@import "../shared/styles/colors.less";
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 85vh;
+  background-color: @Color-04;
+  padding: 20px;
+
+  &__title {
+    font-size: 2em;
+    color: @Color-03;
+  }
+  &__button {
+    button {
+      display: block;
+      height: 100%;
+      margin: 5%;
+      width: 90%;
+      padding: 10px;
+      background-color: #002333;
+      color: #deefe7;
+      border: 1px solid #002333;
+      font-size: 1.2em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: @Color-04;
+        color: @Color-03;
+      }
+    }
+  }
+}
