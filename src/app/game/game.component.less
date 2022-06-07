@@ -2,26 +2,28 @@
 
 .game {
   display: grid;
-  grid-template-rows: 50vh 10vh 20vh;
-  width: 100vw;
-  height: 70vh;
+  grid-template-rows: 50vh 10vh 30vh;
+  width: 100%;
+
+  h1 {
+    margin: 5px auto;
+    font-size: 1.5em;
+    font-weight: 600;
+    text-align: center;
+  }
 
   &__view {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    background-image: url(../../assets/images/fundo.jpg);
     div {
       display: flex;
-      height: 50%;
       width: 45vw;
-      flex-wrap: nowrap;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      h1 {
-        font-weight: 400;
-        color: @Color-03;
-      }
+
       .view__life-player {
         align-items: start;
         height: 15px;
@@ -72,9 +74,26 @@
         ul {
           display: flex;
           flex-direction: row;
-          justify-content: space-around;
+          justify-content: space-evenly;
           li {
             display: flex;
+            width: 20%;
+            margin: 10px 0;
+            padding: 10px 0;
+            justify-content: center;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            cursor: pointer;
+            background-color: @Color-05;
+            border: 1px solid @Color-03;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px gray;
+            transition: all 0.3s ease;
+
+            &:hover {
+              background-color: @Color-03;
+              color: @Color-04;
+            }
           }
         }
       }
@@ -84,5 +103,16 @@
   &__logs {
     display: grid;
     background-color: @Color-01;
+    p{
+        margin: 10px auto;
+        padding: 5px;
+        width: 95%;
+        font-size: 1.2em;
+        font-weight: 600;
+        border-radius: 5px;
+        box-shadow: 2px 2px 10px gray;
+        background-color: @Color-04;
+        border: 1px solid @Color-03;
+    }
   }
 }
