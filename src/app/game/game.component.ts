@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-game',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  giveUp(){
+    if(confirm("Tem certeza que deseja desistir?")){
+      // TODO: implementar desistir
+      this.router.navigateByUrl('home');
+    }
+  }
 
   ngOnInit(): void {
   }
