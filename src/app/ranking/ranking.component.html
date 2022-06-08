@@ -1,1 +1,26 @@
-<p>ranking works!</p>
+<section class="container">
+    <h2 class="titulo">Ranking</h2>
+    <table class="tabela">
+        <thead class="tabela__cabecalho">
+            <th class="tabela__cabecalho__conteudo">Nome</th>
+            <th class="tabela__cabecalho__conteudo">Data</th>
+            <th class="tabela__cabecalho__conteudo">Pontuação</th>
+        </thead>
+        <!-- *ngIf="transferencias?.length; else listaVazia" -->
+        <tbody >
+            <!-- *ngFor="let transferencia of transferencias" -->
+            <tr class="tabela__linha" >
+                <!-- {{transferencia.data | date: "short"}} -->
+                <td class="tabela__conteudo"></td>
+                <!-- {{transferencia.valor | currency}} -->
+                <td class="tabela__conteudo"></td>
+                <!-- {{transferencia.destino}} -->
+                <td class="tabela__conteudo"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- <ng-template #listaVazia>
+        <p>Nenhuma pontuação cadastrada</p>
+    </ng-template> -->
+</section>

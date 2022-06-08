@@ -2,7 +2,7 @@
 
 .game {
   display: grid;
-  grid-template-rows: 50vh 10vh 30vh;
+  grid-template-rows: 3fr 1fr 3fr;
   width: 100%;
 
   h1 {
@@ -37,6 +37,10 @@
           border-radius: 5px 5px;
           background-color: #add555;
         }
+
+      }
+      .image__player{
+          transform: scaleX(-1);
       }
       .view__life-monster {
         align-items: start;
@@ -47,13 +51,13 @@
         .life__monster {
           position: absolute;
           height: 100%;
-          width: 50%;
+          width: 30%;
           border-radius: 5px 5px;
           background-color: #add555;
         }
       }
       img {
-        height: 50%;
+        height: 20rem;
       }
     }
   }
