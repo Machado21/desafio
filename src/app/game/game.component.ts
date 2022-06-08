@@ -12,6 +12,7 @@ export class GameComponent implements OnInit {
   stum: boolean;
 
   player: number;
+  attackSpecial: number;
   monster: number;
 
   playerLife: String;
@@ -23,6 +24,7 @@ export class GameComponent implements OnInit {
     this.stum = false;
 
     this.player = 100;
+    this.attackSpecial = 2;
     this.monster = 100;
 
     this.playerLife = this.player + '%';
@@ -43,26 +45,29 @@ export class GameComponent implements OnInit {
     this.monsterAttack();
   }
 
-  expecialAttack() {
+  specialAttack() {
     const damage = this.getRandomInt(10, 20);
+    //TODO mostrar qua não está habilitado
+    if (this.attackSpecial == 0) {
+      if (this.monster > 0 && this.monster >= damage) {
+        this.monster = this.monster - damage;
+        this.logs.push('Player: Ataque Especial');
 
-    if (this.monster > 0 && this.monster >= damage) {
-      this.monster = this.monster - damage;
-      this.logs.push('Player: Ataque Especial');
-
-      if (this.getRandomInt(1, 2) == 1) {
-        this.stum = true;
-        this.logs.push('Player: Stunou o monstro');
+        if (this.getRandomInt(1, 2) == 1) {
+          this.stum = true;
+          this.logs.push('Player: Stunou o monstro');
+        }
+      } else if (this.monster <= damage) {
+        this.monster = 0; //TODO chamar função esterna para finalizar o jogo
+        this.logs.push('Você Venceu!');
       }
-    } else if (this.monster <= damage) {
-      this.monster = 0; //TODO chamar função esterna para finalizar o jogo
-      this.logs.push('Você Venceu!');
+      this.attackSpecial = 2;
+      this.monsterLife = this.monster + '%';
+  
+      this.monsterAttack();
+      this.stum = false;
     }
 
-    this.monsterLife = this.monster + '%';
-
-    this.monsterAttack();
-    this.stum = false;
   }
 
   healing() {
@@ -107,6 +112,7 @@ export class GameComponent implements OnInit {
       }
     }
     this.playerLife = this.player + '%';
+    this.attackSpecial == 0 ? this.attackSpecial : this.attackSpecial--;
     this.turn++;
   }
 
