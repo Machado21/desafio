@@ -22,13 +22,13 @@
             </div>
             <div class="game__commands-list">
                 <ul>
-                    <li>
+                    <li (click)="attack()">
                         <h2>Ataque</h2>
                     </li>
-                    <li>
+                    <li (click)="expecialAttack()">
                         <h2>Ataque Especial</h2>
                     </li>
-                    <li>
+                    <li (click)="healing()">
                         <h2>Curar</h2>
                     </li>
                     <li (click)="giveUp()">
