@@ -30,17 +30,19 @@
         background-color: #777;
         position: relative;
         border-radius: 5px 5px;
+        p {
+          align-self: center;
+          z-index: 1;
+        }
         .life__player {
           position: absolute;
           height: 100%;
-          width: 50%;
           border-radius: 5px 5px;
           background-color: #add555;
         }
-
       }
-      .image__player{
-          transform: scaleX(-1);
+      .image__player {
+        transform: scaleX(-1);
       }
       .view__life-monster {
         align-items: start;
@@ -48,10 +50,13 @@
         background-color: #777;
         position: relative;
         border-radius: 5px 5px;
+        p {
+          align-self: center;
+          z-index: 1;
+        }
         .life__monster {
           position: absolute;
           height: 100%;
-          width: 30%;
           border-radius: 5px 5px;
           background-color: #add555;
         }
@@ -79,7 +84,8 @@
           display: flex;
           flex-direction: row;
           justify-content: space-evenly;
-          li {
+
+          .item__disabled {
             display: flex;
             width: 20%;
             margin: 10px 0;
@@ -87,6 +93,21 @@
             justify-content: center;
             flex-wrap: nowrap;
             flex-direction: row;
+            text-align: center;
+            background-color: @Color-04;
+            border: 1px solid @Color-03;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px gray;
+          }
+          .item {
+            display: flex;
+            width: 20%;
+            margin: 10px 0;
+            padding: 10px 0;
+            justify-content: center;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            text-align: center;
             cursor: pointer;
             background-color: @Color-05;
             border: 1px solid @Color-03;
@@ -107,16 +128,20 @@
   &__logs {
     display: grid;
     background-color: @Color-01;
-    p{
-        margin: 10px auto;
-        padding: 5px;
-        width: 95%;
-        font-size: 1.2em;
-        font-weight: 600;
-        border-radius: 5px;
-        box-shadow: 2px 2px 10px gray;
-        background-color: @Color-04;
-        border: 1px solid @Color-03;
+    .game__logs-list {
+      height: 21rem;
+      overflow-y: auto;
+    }
+    p {
+      margin: 10px auto;
+      padding: 5px;
+      width: 95%;
+      font-size: 1.2em;
+      font-weight: 600;
+      border-radius: 5px;
+      box-shadow: 2px 2px 10px gray;
+      background-color: @Color-04;
+      border: 1px solid @Color-03;
     }
   }
 }
