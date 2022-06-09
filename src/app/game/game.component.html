@@ -4,7 +4,7 @@
             <h1 class="game__view-player">Jogador</h1>
             <div class="view__life-player">
                 <p>{{playerLife}}</p>
-                <div class="life__player" [ngStyle]="{'width':playerLife}"></div>
+                <div class="life__player" [ngStyle]="{'width':playerLife,'background-color':barColorPlayer}"></div>
             </div>
             <img class="image__player" src="../../assets/images/hero.gif" alt="">
         </div>
@@ -12,7 +12,7 @@
             <h1 class="game__view-monster">Monstro</h1>
             <div class="view__life-monster">
                 <p>{{monsterLife}}</p>
-                <div class="life__monster" [ngStyle]="{'width':monsterLife}"></div>
+                <div class="life__monster" [ngStyle]="{'width':monsterLife,'background-color':barColorMonster}"></div>
             </div>
             <img class="image__monster" src="../../assets/images/monster.gif" alt="">
         </div>
@@ -24,16 +24,16 @@
             </div>
             <div class="game__commands-list">
                 <ul>
-                    <li (click)="attack()">
+                    <li class="item" (click)="attack()">
                         <h2>Ataque</h2>
                     </li>
-                    <li (click)="specialAttack()">
+                    <li [ngClass]='specialState' (click)="specialAttack()">
                         <h2>Ataque Especial</h2>
                     </li>
-                    <li (click)="healing()">
+                    <li class="item" (click)="healing()">
                         <h2>Curar</h2>
                     </li>
-                    <li (click)="giveUp()">
+                    <li class="item" (click)="giveUp()">
                         <h2>Desistir</h2>
                     </li>
                 </ul>
@@ -47,7 +47,7 @@
                 <h1>Logs</h1>
             </div>
             <div *ngIf="logs?.length; else listaVazia" class="game__logs-list">
-                <p *ngFor="let log of logs" >{{log}}</p>
+                <p *ngFor="let log of logs" [ngStyle]="{'text-align':log.style}">{{log.mensage}}</p>
             </div>
             <ng-template #listaVazia>
                 <p>Nenhuma pontuação cadastrada</p>
